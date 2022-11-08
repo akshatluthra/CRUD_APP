@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { ApiDataCollectionService } from './api-data-collection.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'CRUD_APP';
+  userList: any = [];
+
+  constructor(private apiData: ApiDataCollectionService, private loader: NgxSpinnerService){
+  }
+  ngOnInit(){
+    this.loader.show();
+    setTimeout(()=> {
+      this.apiData.getApiData().subscribe((res) => {
+        this.userList = res;
+        this.loader.hide();
+      })
+    },5000)
+  }
 }

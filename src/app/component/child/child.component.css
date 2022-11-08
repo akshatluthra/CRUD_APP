@@ -1,0 +1,27 @@
+.main-div{
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+  .table-div{
+    width: 90%;
+    border-radius: 15px;
+  }
+  table{
+    width: 100%;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+  }
+  table th{
+    background-color: #FCDDB0;
+    color: #000;
+  }
+  table th,td{
+    border: 1px solid #ddd;
+    background-color: #000;
+    color: #FCDDB0;
+    cursor: pointer;
+    padding: 12px;
+    text-align: center;
+  }
